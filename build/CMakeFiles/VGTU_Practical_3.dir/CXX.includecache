@@ -6,14 +6,30 @@
 
 #IncludeRegexTransform: 
 
-../Sources/Collections/Collections.hpp
-Window.hpp
-../Sources/Collections/Window.hpp
-
 ../Sources/Engine/Event/Event.hpp
 SFML/Graphics.hpp
 -
 memory
+-
+
+../Sources/Engine/Shape/AShape.hpp
+tuple
+-
+
+../Sources/Engine/Shape/RectangleShape/RectangleShape.hpp
+SFML/Graphics.hpp
+-
+AShape.hpp
+../Sources/Engine/Shape/RectangleShape/AShape.hpp
+
+../Sources/Engine/Text/Text.hpp
+utility
+-
+string
+-
+tuple
+-
+SFML/Graphics.hpp
 -
 
 ../Sources/Engine/Window/Window.hpp
@@ -29,16 +45,6 @@ tuple
 -
 Event.hpp
 ../Sources/Engine/Window/Event.hpp
-
-../Sources/Errors/Errors.hpp
-IError.hpp
-../Sources/Errors/IError.hpp
-
-../Sources/Errors/IError.hpp
-stdexcept
--
-string
--
 
 /home/corentin/.conan/data/sfml/2.5.1/bincrafters/stable/package/ec19beef9ff77eaf288a2ac2fd03e000b7ce288f/include/SFML/Config.hpp
 TargetConditionals.h
@@ -710,21 +716,17 @@ SFML/Config.hpp
 
 /home/corentin/.conan/data/sfml/2.5.1/bincrafters/stable/package/ec19beef9ff77eaf288a2ac2fd03e000b7ce288f/include/SFML/Window/WindowStyle.hpp
 
-/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Core/Core.cpp
-Core.hpp
-/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Core/Core.hpp
-Window.hpp
-/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Core/Window.hpp
-Errors.hpp
-/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Core/Errors.hpp
-Collections.hpp
-/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Core/Collections.hpp
+/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Collections/Board/Board.cpp
+Board.hpp
+/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Collections/Board/Board.hpp
+
+/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Collections/Board/Board.hpp
 memory
 -
-utility
--
-tuple
--
-
-/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Core/Core.hpp
+Window.hpp
+/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Collections/Board/Window.hpp
+Text.hpp
+/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Collections/Board/Text.hpp
+RectangleShape.hpp
+/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Collections/Board/RectangleShape.hpp
 

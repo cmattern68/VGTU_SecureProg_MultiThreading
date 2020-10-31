@@ -14,7 +14,7 @@ namespace vgtu::engine {
             virtual void draw(std::shared_ptr<vgtu::engine::Window> &) = 0;
 
             /* Callback function */            
-            virtual bool isHovered(std::pair<std::size_t, std::size_t>) = 0;
+            virtual bool isHovered(std::pair<std::size_t, std::size_t>, std::pair<std::size_t, std::size_t>) = 0;
             virtual bool isClicked(std::shared_ptr<vgtu::engine::Window> &, std::shared_ptr<vgtu::engine::Event> &) = 0;
             virtual bool isClickable() = 0;
     };

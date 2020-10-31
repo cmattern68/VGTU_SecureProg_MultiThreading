@@ -36,10 +36,10 @@ set(ENGINE_INC
   ./Sources/Engine/Shape/CircleShape/
   ./Sources/Engine/Shape/RoundedRectangleShape/
   ./Sources/Engine/Shape/RoundedRectangleShape/SfmlOverload/
+  ./Sources/Engine/Texture/
   ./Sources/Engine/Text/
   ./Sources/Engine/Button/
-  ./Sources/Engine/Button/RectangleShapeButton/
-  ./Sources/Engine/Button/RoundedRectangleShapeButton/
+  ./Sources/Engine/Button/SpriteButton/
 )
 
 set(ENGINE_SRC    
@@ -49,9 +49,9 @@ set(ENGINE_SRC
     ./Sources/Engine/Shape/CircleShape/CircleShape.cpp
     ./Sources/Engine/Shape/RoundedRectangleShape/RoundedRectangleShape.cpp
     ./Sources/Engine/Shape/RoundedRectangleShape/SfmlOverload/SfmlRoundedRectangleShape.cpp
+    ./Sources/Engine/Texture/Texture.cpp
     ./Sources/Engine/Text/Text.cpp
-    ./Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp
-    ./Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp
+    ./Sources/Engine/Button/SpriteButton/SpriteButton.cpp
 )
 
 #
@@ -61,17 +61,21 @@ set(ENGINE_SRC
 set(GAME_INC
     ./Sources/Core/
     ./Sources/Collections/
+    ./Sources/Collections/Board/
+    ./Sources/Collections/ThreadBoard/
 )
 
 set(GAME_SRC
     ./Sources/Main/Main.cpp
     ./Sources/Core/Core.cpp
     ./Sources/Collections/Collections.cpp
+    ./Sources/Collections/Board/Board.cpp
+    ./Sources/Collections/ThreadBoard/ThreadBoard.cpp
 )
 
 add_executable(VGTU_Practical_3 ${ERRORS_SRC} ${ENGINE_SRC} ${SHARED_SRC} ${GAME_SRC})
 target_include_directories(VGTU_Practical_3 PUBLIC ${ERRORS_INC} ${ENGINE_INC} ${SHARED_INC} ${GAME_INC})
 if(SFML_FOUND)
   target_include_directories(VGTU_Practical_3 PUBLIC ${SFML_INCLUDE_DIRS})
-  target_link_libraries(VGTU_Practical_3 PUBLIC ${SFML_LIBRARIES} ${SFML_DEPENDENCIES} sfml-graphics sfml-audio sfml-window sfml-system)
+  target_link_libraries(VGTU_Practical_3 PUBLIC ${SFML_LIBRARIES} ${SFML_DEPENDENCIES} sfml-graphics sfml-window sfml-system)
 endif()

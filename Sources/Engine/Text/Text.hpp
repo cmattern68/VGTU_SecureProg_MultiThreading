@@ -11,7 +11,8 @@ namespace vgtu::engine {
     enum textStyle {
         REGULAR = sf::Text::Regular,
         BOLD = sf::Text::Bold,
-        ITALIC = sf::Text::Italic
+        ITALIC = sf::Text::Italic,
+        UNDERLINED = sf::Text::Underlined
     };
 
     class Text {

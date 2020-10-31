@@ -4,16 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Collections/Board/Board.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/Board/Board.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Collections/Collections.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/Collections.cpp.o"
+  "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Collections/ThreadBoard/ThreadBoard.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/ThreadBoard/ThreadBoard.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Core/Core.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Core/Core.cpp.o"
-  "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.o"
-  "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.o"
+  "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Button/SpriteButton/SpriteButton.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/SpriteButton/SpriteButton.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Event/Event.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Event/Event.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Shape/CircleShape/CircleShape.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Shape/CircleShape/CircleShape.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Shape/RectangleShape/RectangleShape.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Shape/RectangleShape/RectangleShape.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Shape/RoundedRectangleShape/RoundedRectangleShape.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Shape/RoundedRectangleShape/RoundedRectangleShape.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Shape/RoundedRectangleShape/SfmlOverload/SfmlRoundedRectangleShape.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Shape/RoundedRectangleShape/SfmlOverload/SfmlRoundedRectangleShape.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Text/Text.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Text/Text.cpp.o"
+  "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Texture/Texture.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Texture/Texture.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Engine/Window/Window.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Window/Window.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Errors/Errors.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Errors/Errors.cpp.o"
   "/home/corentin/VGTU/S1/Secure Prog/Practical 3/Sources/Errors/IError.cpp" "/home/corentin/VGTU/S1/Secure Prog/Practical 3/build/CMakeFiles/VGTU_Practical_3.dir/Sources/Errors/IError.cpp.o"
@@ -49,12 +51,14 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   ".././Sources/Engine/Shape/CircleShape"
   ".././Sources/Engine/Shape/RoundedRectangleShape"
   ".././Sources/Engine/Shape/RoundedRectangleShape/SfmlOverload"
+  ".././Sources/Engine/Texture"
   ".././Sources/Engine/Text"
   ".././Sources/Engine/Button"
-  ".././Sources/Engine/Button/RectangleShapeButton"
-  ".././Sources/Engine/Button/RoundedRectangleShapeButton"
+  ".././Sources/Engine/Button/SpriteButton"
   ".././Sources/Core"
   ".././Sources/Collections"
+  ".././Sources/Collections/Board"
+  ".././Sources/Collections/ThreadBoard"
   )
 
 # Targets to which this target links.

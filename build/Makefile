@@ -142,6 +142,33 @@ VGTU_Practical_3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/build
 .PHONY : VGTU_Practical_3/fast
 
+Sources/Collections/Board/Board.o: Sources/Collections/Board/Board.cpp.o
+
+.PHONY : Sources/Collections/Board/Board.o
+
+# target to build an object file
+Sources/Collections/Board/Board.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/Board/Board.cpp.o
+.PHONY : Sources/Collections/Board/Board.cpp.o
+
+Sources/Collections/Board/Board.i: Sources/Collections/Board/Board.cpp.i
+
+.PHONY : Sources/Collections/Board/Board.i
+
+# target to preprocess a source file
+Sources/Collections/Board/Board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/Board/Board.cpp.i
+.PHONY : Sources/Collections/Board/Board.cpp.i
+
+Sources/Collections/Board/Board.s: Sources/Collections/Board/Board.cpp.s
+
+.PHONY : Sources/Collections/Board/Board.s
+
+# target to generate assembly for a file
+Sources/Collections/Board/Board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/Board/Board.cpp.s
+.PHONY : Sources/Collections/Board/Board.cpp.s
+
 Sources/Collections/Collections.o: Sources/Collections/Collections.cpp.o
 
 .PHONY : Sources/Collections/Collections.o
@@ -168,6 +195,33 @@ Sources/Collections/Collections.s: Sources/Collections/Collections.cpp.s
 Sources/Collections/Collections.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/Collections.cpp.s
 .PHONY : Sources/Collections/Collections.cpp.s
+
+Sources/Collections/ThreadBoard/ThreadBoard.o: Sources/Collections/ThreadBoard/ThreadBoard.cpp.o
+
+.PHONY : Sources/Collections/ThreadBoard/ThreadBoard.o
+
+# target to build an object file
+Sources/Collections/ThreadBoard/ThreadBoard.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/ThreadBoard/ThreadBoard.cpp.o
+.PHONY : Sources/Collections/ThreadBoard/ThreadBoard.cpp.o
+
+Sources/Collections/ThreadBoard/ThreadBoard.i: Sources/Collections/ThreadBoard/ThreadBoard.cpp.i
+
+.PHONY : Sources/Collections/ThreadBoard/ThreadBoard.i
+
+# target to preprocess a source file
+Sources/Collections/ThreadBoard/ThreadBoard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/ThreadBoard/ThreadBoard.cpp.i
+.PHONY : Sources/Collections/ThreadBoard/ThreadBoard.cpp.i
+
+Sources/Collections/ThreadBoard/ThreadBoard.s: Sources/Collections/ThreadBoard/ThreadBoard.cpp.s
+
+.PHONY : Sources/Collections/ThreadBoard/ThreadBoard.s
+
+# target to generate assembly for a file
+Sources/Collections/ThreadBoard/ThreadBoard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Collections/ThreadBoard/ThreadBoard.cpp.s
+.PHONY : Sources/Collections/ThreadBoard/ThreadBoard.cpp.s
 
 Sources/Core/Core.o: Sources/Core/Core.cpp.o
 
@@ -196,59 +250,32 @@ Sources/Core/Core.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Core/Core.cpp.s
 .PHONY : Sources/Core/Core.cpp.s
 
-Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.o: Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.o
+Sources/Engine/Button/SpriteButton/SpriteButton.o: Sources/Engine/Button/SpriteButton/SpriteButton.cpp.o
 
-.PHONY : Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.o
-
-# target to build an object file
-Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.o
-.PHONY : Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.o
-
-Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.i: Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.i
-
-.PHONY : Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.i
-
-# target to preprocess a source file
-Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.i
-.PHONY : Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.i
-
-Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.s: Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.s
-
-.PHONY : Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.s
-
-# target to generate assembly for a file
-Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.s
-.PHONY : Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.cpp.s
-
-Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.o: Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.o
-
-.PHONY : Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.o
+.PHONY : Sources/Engine/Button/SpriteButton/SpriteButton.o
 
 # target to build an object file
-Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.o
-.PHONY : Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.o
+Sources/Engine/Button/SpriteButton/SpriteButton.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/SpriteButton/SpriteButton.cpp.o
+.PHONY : Sources/Engine/Button/SpriteButton/SpriteButton.cpp.o
 
-Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.i: Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.i
+Sources/Engine/Button/SpriteButton/SpriteButton.i: Sources/Engine/Button/SpriteButton/SpriteButton.cpp.i
 
-.PHONY : Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.i
+.PHONY : Sources/Engine/Button/SpriteButton/SpriteButton.i
 
 # target to preprocess a source file
-Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.i
-.PHONY : Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.i
+Sources/Engine/Button/SpriteButton/SpriteButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/SpriteButton/SpriteButton.cpp.i
+.PHONY : Sources/Engine/Button/SpriteButton/SpriteButton.cpp.i
 
-Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.s: Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.s
+Sources/Engine/Button/SpriteButton/SpriteButton.s: Sources/Engine/Button/SpriteButton/SpriteButton.cpp.s
 
-.PHONY : Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.s
+.PHONY : Sources/Engine/Button/SpriteButton/SpriteButton.s
 
 # target to generate assembly for a file
-Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.s
-.PHONY : Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.cpp.s
+Sources/Engine/Button/SpriteButton/SpriteButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Button/SpriteButton/SpriteButton.cpp.s
+.PHONY : Sources/Engine/Button/SpriteButton/SpriteButton.cpp.s
 
 Sources/Engine/Event/Event.o: Sources/Engine/Event/Event.cpp.o
 
@@ -412,6 +439,33 @@ Sources/Engine/Text/Text.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Text/Text.cpp.s
 .PHONY : Sources/Engine/Text/Text.cpp.s
 
+Sources/Engine/Texture/Texture.o: Sources/Engine/Texture/Texture.cpp.o
+
+.PHONY : Sources/Engine/Texture/Texture.o
+
+# target to build an object file
+Sources/Engine/Texture/Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Texture/Texture.cpp.o
+.PHONY : Sources/Engine/Texture/Texture.cpp.o
+
+Sources/Engine/Texture/Texture.i: Sources/Engine/Texture/Texture.cpp.i
+
+.PHONY : Sources/Engine/Texture/Texture.i
+
+# target to preprocess a source file
+Sources/Engine/Texture/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Texture/Texture.cpp.i
+.PHONY : Sources/Engine/Texture/Texture.cpp.i
+
+Sources/Engine/Texture/Texture.s: Sources/Engine/Texture/Texture.cpp.s
+
+.PHONY : Sources/Engine/Texture/Texture.s
+
+# target to generate assembly for a file
+Sources/Engine/Texture/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VGTU_Practical_3.dir/build.make CMakeFiles/VGTU_Practical_3.dir/Sources/Engine/Texture/Texture.cpp.s
+.PHONY : Sources/Engine/Texture/Texture.cpp.s
+
 Sources/Engine/Window/Window.o: Sources/Engine/Window/Window.cpp.o
 
 .PHONY : Sources/Engine/Window/Window.o
@@ -529,18 +583,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... VGTU_Practical_3"
+	@echo "... Sources/Collections/Board/Board.o"
+	@echo "... Sources/Collections/Board/Board.i"
+	@echo "... Sources/Collections/Board/Board.s"
 	@echo "... Sources/Collections/Collections.o"
 	@echo "... Sources/Collections/Collections.i"
 	@echo "... Sources/Collections/Collections.s"
+	@echo "... Sources/Collections/ThreadBoard/ThreadBoard.o"
+	@echo "... Sources/Collections/ThreadBoard/ThreadBoard.i"
+	@echo "... Sources/Collections/ThreadBoard/ThreadBoard.s"
 	@echo "... Sources/Core/Core.o"
 	@echo "... Sources/Core/Core.i"
 	@echo "... Sources/Core/Core.s"
-	@echo "... Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.o"
-	@echo "... Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.i"
-	@echo "... Sources/Engine/Button/RectangleShapeButton/RectangleShapeButton.s"
-	@echo "... Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.o"
-	@echo "... Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.i"
-	@echo "... Sources/Engine/Button/RoundedRectangleShapeButton/RoundedRectangleShapeButton.s"
+	@echo "... Sources/Engine/Button/SpriteButton/SpriteButton.o"
+	@echo "... Sources/Engine/Button/SpriteButton/SpriteButton.i"
+	@echo "... Sources/Engine/Button/SpriteButton/SpriteButton.s"
 	@echo "... Sources/Engine/Event/Event.o"
 	@echo "... Sources/Engine/Event/Event.i"
 	@echo "... Sources/Engine/Event/Event.s"
@@ -559,6 +616,9 @@ help:
 	@echo "... Sources/Engine/Text/Text.o"
 	@echo "... Sources/Engine/Text/Text.i"
 	@echo "... Sources/Engine/Text/Text.s"
+	@echo "... Sources/Engine/Texture/Texture.o"
+	@echo "... Sources/Engine/Texture/Texture.i"
+	@echo "... Sources/Engine/Texture/Texture.s"
 	@echo "... Sources/Engine/Window/Window.o"
 	@echo "... Sources/Engine/Window/Window.i"
 	@echo "... Sources/Engine/Window/Window.s"
