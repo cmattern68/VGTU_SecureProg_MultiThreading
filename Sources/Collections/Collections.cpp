@@ -1,16 +1,17 @@
 #include "Collections.hpp"
 #include <iostream>
+#include <functional>
 
 namespace vgtu::collections
 {
     Collections::Collections(std::shared_ptr<vgtu::engine::Window> &window, std::shared_ptr<vgtu::engine::Event> &event) {
-        _runningThreadNb = 1;
+        _runningThreadNb = 0;
 
         _window = window;        
         _event = event;
         _threadBoard = std::make_unique<vgtu::collections::ThreadBoard>();
         _board = std::make_shared<vgtu::collections::Board>();
-        _fileLoader = std::make_unique<vgtu::collections::FileLoader>();
+        _producer = FileLoader::getFilesName();
     }
 
     void Collections::catchEvent() {
@@ -28,18 +29,14 @@ namespace vgtu::collections
         }
     }
 
-    void Collections::produce() {
-        _producer = _fileLoader->loadBulkContent();
-    }
-
     void Collections::addThread() {
+        _threads.push_back(std::make_unique<vgtu::collections::Thread>(std::ref(_producer)));
         ++_runningThreadNb;
-        std::cout << "1 thread added." << std::endl;
     }
 
     void Collections::removeThread() {
+        _threads.pop_back();
         --_runningThreadNb;
-        std::cout << "1 thread removed." << std::endl;
     }
 
     void Collections::run() {

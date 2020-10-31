@@ -64,6 +64,7 @@ set(GAME_INC
     ./Sources/Collections/Board/
     ./Sources/Collections/ThreadBoard/
     ./Sources/Collections/FileLoader/
+    ./Sources/Collections/Thread/
 )
 
 set(GAME_SRC
@@ -73,11 +74,12 @@ set(GAME_SRC
     ./Sources/Collections/Board/Board.cpp
     ./Sources/Collections/ThreadBoard/ThreadBoard.cpp
     ./Sources/Collections/FileLoader/FileLoader.cpp
+    ./Sources/Collections/Thread/Thread.cpp
 )
 
 add_executable(VGTU_Practical_3 ${ERRORS_SRC} ${ENGINE_SRC} ${SHARED_SRC} ${GAME_SRC})
 target_include_directories(VGTU_Practical_3 PUBLIC ${ERRORS_INC} ${ENGINE_INC} ${SHARED_INC} ${GAME_INC})
 if(SFML_FOUND)
   target_include_directories(VGTU_Practical_3 PUBLIC ${SFML_INCLUDE_DIRS})
-  target_link_libraries(VGTU_Practical_3 PUBLIC ${SFML_LIBRARIES} ${SFML_DEPENDENCIES} sfml-graphics sfml-window sfml-system)
+  target_link_libraries(VGTU_Practical_3 PUBLIC ${SFML_LIBRARIES} ${SFML_DEPENDENCIES} atomic pthread sfml-graphics sfml-window sfml-system)
 endif()

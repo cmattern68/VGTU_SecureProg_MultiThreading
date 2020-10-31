@@ -19,8 +19,6 @@ namespace vgtu {
         std::shared_ptr<vgtu::engine::Event> event = std::make_shared<vgtu::engine::Event>();
         std::unique_ptr<vgtu::collections::Collections> collections = std::make_unique<vgtu::collections::Collections>(window, event);
 
-        collections->produce();
-
         while (window->isOpen()) {
             while (window->pollEvent(event.get())) {
                 collections->catchEvent();

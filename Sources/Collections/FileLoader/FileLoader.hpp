@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <array>
 
 namespace vgtu::collections {
 
@@ -13,9 +14,8 @@ namespace vgtu::collections {
         FileLoader(const FileLoader &) = delete;
         FileLoader &operator=(const FileLoader &) = delete;
 
-        std::vector<std::pair<std::string, std::vector<unsigned long long int>>> loadBulkContent() const;
-    private:
-        std::vector<std::string> _filesName;
+        static std::array<const char *, 1000> getFilesName();
+        static std::vector<unsigned long long int> loadFileContent(std::string);
     };
 }
 
