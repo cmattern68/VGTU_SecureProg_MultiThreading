@@ -1,15 +1,42 @@
 #include "Thread.hpp"
 #include <iostream>
 #include <string.h>
+#include <vector>
+#include <FileLoader.hpp>
+#include <string>
 
 namespace vgtu::collections {
 
-    std
+    bool isPrime(unsigned long long int nb) {
+        if (nb <= 0 || nb == 1) {
+            return false;
+        }
+        else {
+            for (unsigned long long int i = 2; i <= (nb / 2); ++i) {
+                if (nb % i == 0) {
+                    return false;
+                    break;
+                }
+            }
+        }
+        return true;
+    }
+
+    void getPrimaries(std::vector<unsigned long long int> content, std::atomic<unsigned long long int> &pmin, std::atomic<unsigned long long int> &pmax) {
+        for (const unsigned long long int &nb : content) {
+            if (isPrime(nb)) {
+                if (nb > pmax)
+                    pmax = nb;
+                else if (nb < pmin)
+                    pmin = nb;
+            }
+        }
+    }
 
     void performPrimary(std::atomic<std::array<const char *, 1000>> &files, std::atomic<unsigned long long int> &pmin, std::atomic<unsigned long long int> &pmax, std::atomic<std::size_t> &ftotal, std::atomic<char *> &lfile) {
         (void)pmin;
         (void)pmax;
-        for (std::size_t i = 0; i < /*(files.load()).size()*/ 2; ++i) {
+        for (std::size_t i = 0; i < (files.load()).size(); ++i) {
             std::array<const char *, 1000> tmp = files.load();
             std::size_t j = 0;
             for (; tmp[j] != NULL; ++j);
@@ -17,6 +44,7 @@ namespace vgtu::collections {
                 j = tmp.size();
 
             //std::cout << std::endl << "1: tmp[" << j - 1 << "]  " << tmp[j - 1] << " - end" << std::endl;
+            getPrimaries(FileLoader::loadFileContent(std::string(tmp[j - 1])), std::ref(pmin), std::ref(pmax));
             lfile = strdup(tmp[j - 1]);
             tmp[j - 1] = NULL;
             files = tmp;

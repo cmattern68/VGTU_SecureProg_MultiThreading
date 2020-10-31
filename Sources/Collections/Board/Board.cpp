@@ -6,7 +6,7 @@ namespace vgtu::collections
 {
     Board::Board() {
         _ftotal = 0;
-        _pmin = 0;
+        //_pmin = 0;
         _pmax = 0;
         _lfile = strdup("None");
         _min = std::make_pair<std::unique_ptr<vgtu::engine::Text>>(
