@@ -20,7 +20,7 @@ namespace vgtu::collections {
             std::shared_ptr<vgtu::engine::Window> _window;
             std::shared_ptr<vgtu::engine::Event> _event;
             std::unique_ptr<vgtu::collections::ThreadBoard> _threadBoard;
-            std::unique_ptr<vgtu::collections::Board> _board;
+            std::shared_ptr<vgtu::collections::Board> _board;
     };
 }
 

@@ -3,6 +3,9 @@
 namespace vgtu::collections
 {
     Board::Board() {
+        _ftotal = 0;
+        _pmin = 0;
+        _pmax = 0;
         _min = std::make_pair<std::unique_ptr<vgtu::engine::Text>>(
                 std::make_unique<vgtu::engine::Text>(
                     std::make_pair(10, 110),
@@ -80,6 +83,25 @@ namespace vgtu::collections
                 std::make_pair(600, 2),
                 std::make_tuple(44, 62, 80)
         );
+    }
+
+    void Board::setPrime(const std::size_t nb) {
+        if (nb < _pmin) {
+            _pmin = nb;
+            _min.second->setText(std::to_string(nb));
+        } else if (nb > _pmax) {
+            _pmax = nb;
+            _max.second->setText(std::to_string(nb));
+        }
+    }
+
+    void Board::setLast(const std::string path) {
+        _last.second->setText(path);
+    }
+
+    void Board::updateTotal() {
+        ++_ftotal;
+        _total.second->setText(std::to_string(_ftotal));
     }
 
     void Board::onEvent(std::shared_ptr<vgtu::engine::Window> &window, std::shared_ptr<vgtu::engine::Event> &evt) {

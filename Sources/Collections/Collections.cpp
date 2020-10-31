@@ -8,7 +8,7 @@ namespace vgtu::collections
         _window = window;        
         _event = event;
         _threadBoard = std::make_unique<vgtu::collections::ThreadBoard>();
-        _board = std::make_unique<vgtu::collections::Board>();
+        _board = std::make_shared<vgtu::collections::Board>();
     }
 
     void Collections::catchEvent() {
