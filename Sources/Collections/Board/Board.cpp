@@ -1,4 +1,6 @@
 #include "Board.hpp"
+#include <string>
+#include <string.h>
 
 namespace vgtu::collections
 {
@@ -6,6 +8,7 @@ namespace vgtu::collections
         _ftotal = 0;
         _pmin = 0;
         _pmax = 0;
+        _lfile = strdup("None");
         _min = std::make_pair<std::unique_ptr<vgtu::engine::Text>>(
                 std::make_unique<vgtu::engine::Text>(
                     std::make_pair(10, 110),
@@ -85,31 +88,16 @@ namespace vgtu::collections
         );
     }
 
-    void Board::setPrime(const unsigned long long int nb) {
-        if (nb < _pmin) {
-            _pmin = nb;
-            _min.second->setText(std::to_string(nb));
-        } else if (nb > _pmax) {
-            _pmax = nb;
-            _max.second->setText(std::to_string(nb));
-        }
-    }
-
-    void Board::setLast(const std::string path) {
-        _last.second->setText(path);
-    }
-
-    void Board::updateTotal() {
-        ++_ftotal;
-        _total.second->setText(std::to_string(_ftotal));
-    }
-
     void Board::onEvent(std::shared_ptr<vgtu::engine::Window> &window, std::shared_ptr<vgtu::engine::Event> &evt) {
         (void)window;
         (void)evt;
     }
 
     void Board::draw(std::shared_ptr<vgtu::engine::Window> &window) {
+        _min.second->setText(std::to_string(_pmin));
+        _max.second->setText(std::to_string(_pmax));
+        _last.second->setText(std::string(_lfile));
+        _total.second->setText(std::to_string(_ftotal));
         window->draw(_min.first->getText());
         window->draw(_min.second->getText());
         window->draw(_max.first->getText());
