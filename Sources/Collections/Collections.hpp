@@ -15,10 +15,15 @@ namespace vgtu::collections {
             Collections &operator=(const Collections &) = delete;
 
             void produce();
+            void addThread();
+            void removeThread();
+
             void catchEvent();
             void run();
             void draw();            
         private:
+            unsigned short int _runningThreadNb;
+
             std::shared_ptr<vgtu::engine::Window> _window;
             std::shared_ptr<vgtu::engine::Event> _event;
             std::unique_ptr<vgtu::collections::ThreadBoard> _threadBoard;

@@ -55,7 +55,7 @@ namespace vgtu::collections
     }
 
     void ThreadBoard::removeThread() {
-        if (_threadNb > 0) {
+        if (_threadNb > 1) {
             if (_threadNb == 10)
                 _thread->setPos(std::make_pair(290, 48));
             if (_threadNb == 100)
@@ -65,21 +65,29 @@ namespace vgtu::collections
         }
     }
 
-    void ThreadBoard::onEvent(std::shared_ptr<vgtu::engine::Window> &window, std::shared_ptr<vgtu::engine::Event> &evt) {
-        if (_mButton->isClicked(window, evt))
-            removeThread();
-
-        if (_pButton->isClicked(window, evt))
-            addThread();
+    threadEvent ThreadBoard::onEvent(std::shared_ptr<vgtu::engine::Window> &window, std::shared_ptr<vgtu::engine::Event> &evt) {
+        if (_threadNb > 1) {
+            if (_mButton->isClicked(window, evt)) {
+                removeThread();
+                return threadEvent::REMOVE;
+            }
+        }
+        if (_threadNb < 100) {
+            if (_pButton->isClicked(window, evt)) {
+                addThread();
+                return threadEvent::ADD;
+            }
+        }
+        return threadEvent::NONE;
     }
 
     void ThreadBoard::draw(std::shared_ptr<vgtu::engine::Window> &window) {
         window->draw(_hr->getShape());
         window->draw(_sentence->getText());
         window->draw(_thread->getText());
-        if (_threadNb != 0)
+        if (_threadNb > 1)
             _mButton->draw(window);
-        if (_threadNb != 100)
+        if (_threadNb < 100)
             _pButton->draw(window);
     }
 }

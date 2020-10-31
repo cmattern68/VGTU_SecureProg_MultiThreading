@@ -9,6 +9,12 @@
 
 namespace vgtu::collections {
 
+    enum threadEvent {
+        ADD,
+        REMOVE,
+        NONE
+    };
+
     class ThreadBoard {
     public:
         ~ThreadBoard() = default;
@@ -18,7 +24,7 @@ namespace vgtu::collections {
 
         unsigned short int getThreadNb() const { return _threadNb; }
 
-        void onEvent(std::shared_ptr<vgtu::engine::Window> &, std::shared_ptr<vgtu::engine::Event> &);
+        threadEvent onEvent(std::shared_ptr<vgtu::engine::Window> &, std::shared_ptr<vgtu::engine::Event> &);
         void draw(std::shared_ptr<vgtu::engine::Window> &);
     private:
         void addThread();
