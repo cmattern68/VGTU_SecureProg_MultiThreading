@@ -63,6 +63,7 @@ set(GAME_INC
     ./Sources/Collections/
     ./Sources/Collections/Board/
     ./Sources/Collections/ThreadBoard/
+    ./Sources/Collections/FileLoader/
 )
 
 set(GAME_SRC
@@ -71,6 +72,7 @@ set(GAME_SRC
     ./Sources/Collections/Collections.cpp
     ./Sources/Collections/Board/Board.cpp
     ./Sources/Collections/ThreadBoard/ThreadBoard.cpp
+    ./Sources/Collections/FileLoader/FileLoader.cpp
 )
 
 add_executable(VGTU_Practical_3 ${ERRORS_SRC} ${ENGINE_SRC} ${SHARED_SRC} ${GAME_SRC})

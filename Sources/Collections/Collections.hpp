@@ -4,6 +4,7 @@
 #include "Window.hpp"
 #include "ThreadBoard.hpp"
 #include "Board.hpp"
+#include "FileLoader.hpp"
 
 namespace vgtu::collections {
     class Collections {
@@ -13,6 +14,7 @@ namespace vgtu::collections {
             Collections(const Collections &) = delete;
             Collections &operator=(const Collections &) = delete;
 
+            void produce();
             void catchEvent();
             void run();
             void draw();            
@@ -21,6 +23,8 @@ namespace vgtu::collections {
             std::shared_ptr<vgtu::engine::Event> _event;
             std::unique_ptr<vgtu::collections::ThreadBoard> _threadBoard;
             std::shared_ptr<vgtu::collections::Board> _board;
+            std::unique_ptr<vgtu::collections::FileLoader> _fileLoader;
+            std::vector<std::pair<std::string, std::vector<unsigned long long int>>> _producer;
     };
 }
 

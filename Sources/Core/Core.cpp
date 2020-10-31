@@ -19,6 +19,8 @@ namespace vgtu {
         std::shared_ptr<vgtu::engine::Event> event = std::make_shared<vgtu::engine::Event>();
         std::unique_ptr<vgtu::collections::Collections> collections = std::make_unique<vgtu::collections::Collections>(window, event);
 
+        collections->produce();
+
         while (window->isOpen()) {
             while (window->pollEvent(event.get())) {
                 collections->catchEvent();
@@ -26,7 +28,7 @@ namespace vgtu {
             collections->run();
             window->clear(std::make_tuple(236, 240, 241));
             collections->draw();
-            window->display();            
+            window->display();
         }
     }
 }

@@ -85,7 +85,7 @@ namespace vgtu::collections
         );
     }
 
-    void Board::setPrime(const std::size_t nb) {
+    void Board::setPrime(const unsigned long long int nb) {
         if (nb < _pmin) {
             _pmin = nb;
             _min.second->setText(std::to_string(nb));
