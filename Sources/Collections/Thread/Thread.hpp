@@ -4,12 +4,19 @@
 #include <thread>
 #include <atomic>
 #include <array>
+#include <memory>
+#include "Window.hpp"
 
 namespace vgtu::collections {
     class Thread {
     public:
         ~Thread();
-        Thread(std::atomic<std::array<const char *, 1000>> &, std::atomic<std::array<const char *, 1000>> &, std::atomic<unsigned long long int> &, std::atomic<unsigned long long int> &, std::atomic<std::size_t> &, std::atomic<char *> &);
+        Thread(std::atomic<std::array<const char *, 1000>> &,
+                std::atomic<std::array<const char *, 1000>> &,
+                std::atomic<unsigned long long int> &,
+                std::atomic<unsigned long long int> &,
+                std::atomic<std::size_t> &,
+                std::atomic<char *> &);
         Thread(const Thread &) = delete;
         Thread &operator=(const Thread &) = delete;
     private:

@@ -1,5 +1,4 @@
 #include "Collections.hpp"
-#include <iostream>
 #include <functional>
 
 namespace vgtu::collections
@@ -32,8 +31,13 @@ namespace vgtu::collections
     }
 
     void Collections::addThread() {
-        _threads.push_back(std::make_unique<vgtu::collections::Thread>(std::ref(_producer), std::ref(_consumer), std::ref(_board->_pmin), std::ref(_board->_pmax), std::ref(_board->_ftotal), std::ref(_board->_lfile)));
         ++_runningThreadNb;
+        _threads.push_back(std::make_unique<vgtu::collections::Thread>(std::ref(_producer),
+                                                                       std::ref(_consumer),
+                                                                       std::ref(_board->_pmin),
+                                                                       std::ref(_board->_pmax),
+                                                                       std::ref(_board->_ftotal),
+                                                                       std::ref(_board->_lfile)));
     }
 
     void Collections::removeThread() {
