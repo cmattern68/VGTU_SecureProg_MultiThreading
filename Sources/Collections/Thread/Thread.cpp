@@ -27,38 +27,65 @@ namespace vgtu::collections {
             if (isPrime(nb)) {
                 if (nb > pmax)
                     pmax = nb;
-                else if (nb < pmin)
+                else if (nb < pmin || pmin == 0)
                     pmin = nb;
             }
         }
     }
 
-    void performPrimary(std::atomic<std::array<const char *, 1000>> &files, std::atomic<unsigned long long int> &pmin, std::atomic<unsigned long long int> &pmax, std::atomic<std::size_t> &ftotal, std::atomic<char *> &lfile) {
-        (void)pmin;
-        (void)pmax;
-        for (std::size_t i = 0; i < (files.load()).size(); ++i) {
-            std::array<const char *, 1000> tmp = files.load();
+    void performPrimary(std::atomic<std::array<const char *, 1000>> &producer,
+                        std::atomic<std::array<const char *, 1000>> &consumer,
+                        std::atomic<unsigned long long int> &pmin,
+                        std::atomic<unsigned long long int> &pmax,
+                        std::atomic<std::size_t> &ftotal,
+                        std::atomic<char *> &lfile) {
+        for (std::size_t i = 0; i < (producer.load()).size(); ++i) {
+            std::array<const char *, 1000> ptmp = producer.load();
+            std::array<const char *, 1000> ctmp = consumer.load();
             std::size_t j = 0;
-            for (; tmp[j] != NULL; ++j);
-            if (j > 1000)
-                j = tmp.size();
+            std::size_t k = 0;
+            bool isDone = false;
 
-            //std::cout << std::endl << "1: tmp[" << j - 1 << "]  " << tmp[j - 1] << " - end" << std::endl;
-            getPrimaries(FileLoader::loadFileContent(std::string(tmp[j - 1])), std::ref(pmin), std::ref(pmax));
-            lfile = strdup(tmp[j - 1]);
-            tmp[j - 1] = NULL;
-            files = tmp;
-            ftotal = ftotal + 1;
+            for (; ptmp[j] != NULL; ++j);
+            if (j > 1000)
+                j = ptmp.size();
+
+            for (; ctmp[k] != NULL; ++k) {
+                if (ctmp[k] == ptmp[j - 1])
+                    isDone = true;
+            }
+            if (!isDone) {
+                ctmp[k] = strdup(ptmp[j - 1]);
+                consumer = ctmp;
+
+                std::string filename = ptmp[j - 1];
+                lfile = strdup(ptmp[j - 1]);
+                ptmp[j - 1] = NULL;
+                producer = ptmp;
+                ftotal = ftotal + 1;
+                getPrimaries(FileLoader::loadFileContent(filename), std::ref(pmin), std::ref(pmax));
+            }
         }
     }
 
-    Thread::Thread(std::atomic<std::array<const char *, 1000>> &files, std::atomic<unsigned long long int> &pmin, std::atomic<unsigned long long int> &pmax, std::atomic<std::size_t> &ftotal, std::atomic<char *> &lfile) {
-        _thread = std::make_unique<std::thread>(performPrimary, std::ref(files), std::ref(pmin), std::ref(pmax), std::ref(ftotal), std::ref(lfile));
-        std::cout << "1 thread added." << std::endl;
+    Thread::Thread(std::atomic<std::array<const char *, 1000>> &producer,
+                   std::atomic<std::array<const char *, 1000>> &consumer,
+                   std::atomic<unsigned long long int> &pmin,
+                   std::atomic<unsigned long long int> &pmax,
+                   std::atomic<std::size_t> &ftotal,
+                   std::atomic<char *> &lfile) {
+        _thread = std::make_unique<std::thread>(performPrimary,
+                                                std::ref(producer),
+                                                std::ref(consumer),
+                                                std::ref(pmin),
+                                                std::ref(pmax),
+                                                std::ref(ftotal),
+                                                std::ref(lfile));
+        //std::cout << "1 thread added." << std::endl;
     }
 
     Thread::~Thread() {
         _thread->detach();
-        std::cout << "1 thread removed." << std::endl;
+        //std::cout << "1 thread removed." << std::endl;
     }
 }

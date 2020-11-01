@@ -32,6 +32,7 @@ namespace vgtu::collections {
             std::unique_ptr<vgtu::collections::ThreadBoard> _threadBoard;
             std::shared_ptr<vgtu::collections::Board> _board;
             std::atomic<std::array<const char *, 1000>> _producer;
+            std::atomic<std::array<const char *, 1000>> _consumer;
     };
 }
 

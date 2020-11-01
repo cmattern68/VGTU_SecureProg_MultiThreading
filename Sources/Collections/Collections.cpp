@@ -6,11 +6,13 @@ namespace vgtu::collections
 {
     Collections::Collections(std::shared_ptr<vgtu::engine::Window> &window, std::shared_ptr<vgtu::engine::Event> &event) {
         _runningThreadNb = 0;
+        _producer = std::array<const char *, 1000>{NULL};
+        _consumer = std::array<const char *, 1000>{NULL};
 
+        _board = std::make_shared<vgtu::collections::Board>();
         _window = window;        
         _event = event;
         _threadBoard = std::make_unique<vgtu::collections::ThreadBoard>();
-        _board = std::make_shared<vgtu::collections::Board>();
         _producer = FileLoader::getFilesName();
     }
 
@@ -30,7 +32,7 @@ namespace vgtu::collections
     }
 
     void Collections::addThread() {
-        _threads.push_back(std::make_unique<vgtu::collections::Thread>(std::ref(_producer), std::ref(_board->_pmin), std::ref(_board->_pmax), std::ref(_board->_ftotal), std::ref(_board->_lfile)));
+        _threads.push_back(std::make_unique<vgtu::collections::Thread>(std::ref(_producer), std::ref(_consumer), std::ref(_board->_pmin), std::ref(_board->_pmax), std::ref(_board->_ftotal), std::ref(_board->_lfile)));
         ++_runningThreadNb;
     }
 
