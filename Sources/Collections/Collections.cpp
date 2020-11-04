@@ -1,6 +1,5 @@
 #include "Collections.hpp"
 #include <functional>
-#include <iostream>
 
 namespace vgtu::collections
 {

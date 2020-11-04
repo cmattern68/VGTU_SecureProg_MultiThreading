@@ -60,7 +60,7 @@ namespace vgtu::collections {
                 consumer = ctmp;
 
                 std::string filename = ptmp[j - 1];
-                //std::cout << "New file load by thread nb " << nb << " :" << filename << std::endl;
+                std::cout << "New file load by thread nb " << nb << " :" << filename << std::endl;
                           lfile = strdup(ptmp[j - 1]);
                 ptmp[j - 1] = NULL;
                 producer = ptmp;
@@ -85,11 +85,9 @@ namespace vgtu::collections {
                                                 std::ref(ftotal),
                                                 std::ref(lfile),
                                                 nb);
-        //std::cout << "1 thread added." << std::endl;
     }
 
     Thread::~Thread() {
         _thread->detach();
-        //std::cout << "1 thread removed." << std::endl;
     }
 }

@@ -3,7 +3,6 @@
 #include <sstream>
 #include <filesystem>
 #include <fstream>
-#include <iostream>
 #include <string.h>
 
 namespace vgtu::collections {
