@@ -1,5 +1,4 @@
 #include "Thread.hpp"
-#include <iostream>
 #include <string.h>
 #include <vector>
 #include <FileLoader.hpp>
@@ -24,10 +23,11 @@ namespace vgtu::collections {
 
     void getPrimaries(std::vector<unsigned long long int> content, std::atomic<unsigned long long int> &pmin, std::atomic<unsigned long long int> &pmax) {
         for (const unsigned long long int &nb : content) {
-            if (isPrime(nb)) {
-                if (nb > pmax)
+            if (nb > pmax) {
+                if (isPrime(nb))
                     pmax = nb;
-                else if (nb < pmin || pmin == 0)
+            } else if (nb < pmin || pmin == 0) {
+                if (isPrime(nb) || pmin == 0)
                     pmin = nb;
             }
         }
@@ -60,8 +60,7 @@ namespace vgtu::collections {
                 consumer = ctmp;
 
                 std::string filename = ptmp[j - 1];
-                std::cout << "New file load by thread nb " << nb << " :" << filename << std::endl;
-                          lfile = strdup(ptmp[j - 1]);
+                lfile = strdup(ptmp[j - 1]);
                 ptmp[j - 1] = NULL;
                 producer = ptmp;
                 ftotal = ftotal + 1;
