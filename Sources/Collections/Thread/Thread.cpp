@@ -38,7 +38,8 @@ namespace vgtu::collections {
                         std::atomic<unsigned long long int> &pmin,
                         std::atomic<unsigned long long int> &pmax,
                         std::atomic<std::size_t> &ftotal,
-                        std::atomic<char *> &lfile) {
+                        std::atomic<char *> &lfile,
+                        unsigned short int nb) {
         for (std::size_t i = 0; i < (producer.load()).size(); ++i) {
             std::array<const char *, 1000> ptmp = producer.load();
             std::array<const char *, 1000> ctmp = consumer.load();
@@ -59,7 +60,8 @@ namespace vgtu::collections {
                 consumer = ctmp;
 
                 std::string filename = ptmp[j - 1];
-                lfile = strdup(ptmp[j - 1]);
+                //std::cout << "New file load by thread nb " << nb << " :" << filename << std::endl;
+                          lfile = strdup(ptmp[j - 1]);
                 ptmp[j - 1] = NULL;
                 producer = ptmp;
                 ftotal = ftotal + 1;
@@ -73,14 +75,16 @@ namespace vgtu::collections {
                    std::atomic<unsigned long long int> &pmin,
                    std::atomic<unsigned long long int> &pmax,
                    std::atomic<std::size_t> &ftotal,
-                   std::atomic<char *> &lfile) {
+                   std::atomic<char *> &lfile,
+                   unsigned short int nb) {
         _thread = std::make_unique<std::thread>(performPrimary,
                                                 std::ref(producer),
                                                 std::ref(consumer),
                                                 std::ref(pmin),
                                                 std::ref(pmax),
                                                 std::ref(ftotal),
-                                                std::ref(lfile));
+                                                std::ref(lfile),
+                                                nb);
         //std::cout << "1 thread added." << std::endl;
     }
 

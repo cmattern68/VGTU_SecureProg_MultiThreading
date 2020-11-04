@@ -16,7 +16,8 @@ namespace vgtu::collections {
                 std::atomic<unsigned long long int> &,
                 std::atomic<unsigned long long int> &,
                 std::atomic<std::size_t> &,
-                std::atomic<char *> &);
+                std::atomic<char *> &,
+               unsigned short int);
         Thread(const Thread &) = delete;
         Thread &operator=(const Thread &) = delete;
     private:

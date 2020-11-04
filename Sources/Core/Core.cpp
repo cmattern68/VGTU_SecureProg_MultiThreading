@@ -15,7 +15,7 @@ namespace vgtu {
             throw SystemError {"Cannot run the program with argument."};
         if (env[0] == NULL)
             throw SystemError {"Cannot run the program without environment"};        
-        std::shared_ptr<vgtu::engine::Window> window = std::make_shared<vgtu::engine::Window>(std::make_pair(600, 207), "VGTU Practical Work 3");
+        std::shared_ptr<vgtu::engine::Window> window = std::make_shared<vgtu::engine::Window>(std::make_pair(600, 240), "VGTU Practical Work 3");
         std::shared_ptr<vgtu::engine::Event> event = std::make_shared<vgtu::engine::Event>();
         std::unique_ptr<vgtu::collections::Collections> collections = std::make_unique<vgtu::collections::Collections>(window, event);
 

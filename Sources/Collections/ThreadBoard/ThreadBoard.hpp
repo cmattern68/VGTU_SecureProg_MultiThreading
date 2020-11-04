@@ -23,6 +23,7 @@ namespace vgtu::collections {
         ThreadBoard &operator=(const ThreadBoard &) = delete;
 
         unsigned short int getThreadNb() const { return _threadNb; }
+        void setDone();
 
         threadEvent onEvent(std::shared_ptr<vgtu::engine::Window> &, std::shared_ptr<vgtu::engine::Event> &);
         void draw(std::shared_ptr<vgtu::engine::Window> &);

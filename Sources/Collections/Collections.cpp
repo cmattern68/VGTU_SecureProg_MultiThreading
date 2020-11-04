@@ -1,10 +1,12 @@
 #include "Collections.hpp"
 #include <functional>
+#include <iostream>
 
 namespace vgtu::collections
 {
     Collections::Collections(std::shared_ptr<vgtu::engine::Window> &window, std::shared_ptr<vgtu::engine::Event> &event) {
         _runningThreadNb = 0;
+        _isDone = false;
         _producer = std::array<const char *, 1000>{NULL};
         _consumer = std::array<const char *, 1000>{NULL};
 
@@ -13,6 +15,15 @@ namespace vgtu::collections
         _event = event;
         _threadBoard = std::make_unique<vgtu::collections::ThreadBoard>();
         _producer = FileLoader::getFilesName();
+
+        _done = std::make_unique<vgtu::engine::Text>(
+                std::make_pair(230, 207),
+                std::make_tuple(230, 126, 34),
+                25,
+                std::string("In progress..."),
+                "Resources/Font/OpenSans.ttf",
+                vgtu::engine::textStyle::REGULAR
+                );
     }
 
     void Collections::catchEvent() {
@@ -37,7 +48,8 @@ namespace vgtu::collections
                                                                        std::ref(_board->_pmin),
                                                                        std::ref(_board->_pmax),
                                                                        std::ref(_board->_ftotal),
-                                                                       std::ref(_board->_lfile)));
+                                                                       std::ref(_board->_lfile),
+                                                                       _runningThreadNb));
     }
 
     void Collections::removeThread() {
@@ -46,15 +58,25 @@ namespace vgtu::collections
     }
 
     void Collections::run() {
-        if (_runningThreadNb < _threadBoard->getThreadNb()) {
-            addThread();
-        } else if (_runningThreadNb > _threadBoard->getThreadNb()) {
-            removeThread();
+        if (_board->_ftotal < 1000) {
+            if (_runningThreadNb < _threadBoard->getThreadNb()) {
+                addThread();
+            } else if (_runningThreadNb > _threadBoard->getThreadNb()) {
+                removeThread();
+            }
+        } else if (_board->_ftotal == 1000 && !_isDone) {
+            _isDone = true;
+            _done->setPos(std::make_pair(260, 207));
+            _done->setText("Done !");
+            _done->setColor(std::make_tuple(39, 174, 96));
+            _threads.clear();
+            _threadBoard->setDone();
         }
     }
 
     void Collections::draw() {
         _threadBoard->draw(_window);
         _board->draw(_window);
+        _window->draw(_done->getText());
     }
 }

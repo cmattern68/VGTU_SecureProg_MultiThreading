@@ -43,6 +43,11 @@ namespace vgtu::collections
         );
     }
 
+    void ThreadBoard::setDone() {
+        _threadNb = 0;
+        _thread->setText("0");
+    }
+
     void ThreadBoard::addThread() {
         if (_threadNb < 100) {
             if (_threadNb == 9)
@@ -87,7 +92,7 @@ namespace vgtu::collections
         window->draw(_thread->getText());
         if (_threadNb > 1)
             _mButton->draw(window);
-        if (_threadNb < 100)
+        if (_threadNb < 100 && _threadNb > 0)
             _pButton->draw(window);
     }
 }
